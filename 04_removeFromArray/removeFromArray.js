@@ -1,13 +1,13 @@
 const removeFromArray = function (array, ...toRemove) {
-	newArray = [];
-	for (const arg of toRemove)
-		for (let i = 0; i < array.length; i++) {
-			if (array[i] !== arg) {
-				newArray.push(array[i]);
-			}
+	let newArray = [];
+	array.forEach((element) => {
+		if (!toRemove.includes(element)) {
+			newArray.push(element);
 		}
+	});
+
 	return newArray;
 };
 // Do not edit below this line
-console.log(removeFromArray([1, 2, 3, 4], 3));
+console.log(removeFromArray([1, 2, 3, 4, 5, 6], 3, 4));
 module.exports = removeFromArray;
